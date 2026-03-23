@@ -23,11 +23,12 @@
         "name": { "type": "string", "description": "Item name" },
         "description": { "type": "string", "description": "Item description" },
         "price": { "type": "number", "description": "Item price" },
-        "category": { "type": "string", "enum": ["Breakfast", "Cold Drinks", "Main Course", "Desserts"], "description": "Item category" },
+        "category": { "type": "string", "enum": ["Breakfast", "Cold Drinks", "Papad", "Tandoor Starter", "Chai / Coffee", "Paneer Special", "Main Course", "Rice", "Roti", "Handi", "Thali"], "description": "Item category" },
         "image": { "type": "string", "description": "URL to item image" },
-        "isAvailable": { "type": "boolean", "description": "Availability status" }
+        "isAvailable": { "type": "boolean", "description": "Availability status" },
+        "stock": { "type": "number", "description": "Available stock quantity" }
       },
-      "required": ["name", "price", "category"]
+      "required": ["name", "price", "category", "stock"]
     },
     "User": {
       "title": "User",

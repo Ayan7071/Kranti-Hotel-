@@ -9,7 +9,7 @@ service cloud.firestore {
     // Fields: name (string), phone (string), date (string), time (string), guests (number), status (string), createdAt (timestamp)
     //
     // Collection: menuItems
-    // Fields: name (string), description (string), price (number), category (string), image (string), isAvailable (bool)
+    // Fields: name (string), description (string), price (number), category (string), image (string), isAvailable (bool), stock (number)
     //
     // Collection: users
     // Fields: email (string), role (string)
@@ -42,8 +42,9 @@ service cloud.firestore {
     function isValidMenuItem(data) {
       return data.name is string && data.name.size() > 0 && data.name.size() < 100 &&
              data.price is number && data.price >= 0 &&
-             data.category in ['Breakfast', 'Cold Drinks', 'Main Course', 'Desserts'] &&
-             data.isAvailable is bool;
+             data.category in ['Breakfast', 'Cold Drinks', 'Papad', 'Tandoor Starter', 'Chai / Coffee', 'Paneer Special', 'Main Course', 'Rice', 'Roti', 'Handi', 'Thali'] &&
+             data.isAvailable is bool &&
+             data.stock is number && data.stock >= 0;
     }
 
     function isValidUser(data) {

@@ -30,6 +30,9 @@
   .btn-outline {
     @apply px-8 py-3 border-2 border-primary text-primary font-semibold rounded-full hover:bg-primary hover:text-secondary transition-all duration-300;
   }
+  .admin-input {
+    @apply w-full px-4 py-2 rounded-xl bg-accent/50 dark:bg-white/5 border border-black/5 dark:border-white/5 outline-none focus:ring-2 focus:ring-primary text-sm;
+  }
   .section-title {
     @apply text-4xl md:text-5xl font-serif text-center mb-12;
   }
