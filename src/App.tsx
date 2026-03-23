@@ -79,7 +79,8 @@ const MenuCardPage = () => {
           className="relative max-w-4xl mx-auto bg-white dark:bg-bg-dark p-4 rounded-3xl shadow-2xl border border-black/5 dark:border-white/5"
         >
           <img 
-            src="https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?auto=format&fit=crop&q=80&w=2000" 
+            src="kranti-menucard" 
+              src="kranti-menucard2" 
             alt="Menu Card" 
             className="w-full rounded-2xl shadow-inner"
             referrerPolicy="no-referrer"
