@@ -1,0 +1,5 @@
+{
+  "name": "Hotel Kranti Pure Veg",
+  "description": "A premium, modern website for Hotel Kranti Pure Veg, featuring online booking, menu management, and a luxury dining experience.",
+  "requestFramePermissions": ["geolocation"]
+}

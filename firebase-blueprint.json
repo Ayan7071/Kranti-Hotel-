@@ -1,0 +1,73 @@
+{
+  "entities": {
+    "Booking": {
+      "title": "Booking",
+      "description": "A table booking request",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "Customer name" },
+        "phone": { "type": "string", "description": "Customer phone number" },
+        "date": { "type": "string", "description": "Booking date" },
+        "time": { "type": "string", "description": "Booking time" },
+        "guests": { "type": "number", "description": "Number of guests" },
+        "status": { "type": "string", "enum": ["pending", "confirmed", "cancelled"], "description": "Booking status" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Creation timestamp" }
+      },
+      "required": ["name", "phone", "date", "time", "guests"]
+    },
+    "MenuItem": {
+      "title": "MenuItem",
+      "description": "An item in the restaurant menu",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "Item name" },
+        "description": { "type": "string", "description": "Item description" },
+        "price": { "type": "number", "description": "Item price" },
+        "category": { "type": "string", "enum": ["Breakfast", "Cold Drinks", "Main Course", "Desserts"], "description": "Item category" },
+        "image": { "type": "string", "description": "URL to item image" },
+        "isAvailable": { "type": "boolean", "description": "Availability status" }
+      },
+      "required": ["name", "price", "category"]
+    },
+    "User": {
+      "title": "User",
+      "description": "User profile and role",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "description": "User email" },
+        "role": { "type": "string", "enum": ["admin", "customer"], "description": "User role" }
+      },
+      "required": ["email", "role"]
+    },
+    "Video": {
+      "title": "Video",
+      "description": "A video showcase item",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "description": "Video title" },
+        "url": { "type": "string", "description": "Video URL" },
+        "thumbnail": { "type": "string", "description": "Thumbnail URL" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Creation timestamp" }
+      },
+      "required": ["title", "url"]
+    }
+  },
+  "firestore": {
+    "/bookings/{bookingId}": {
+      "schema": "Booking",
+      "description": "Collection of table bookings"
+    },
+    "/menuItems/{itemId}": {
+      "schema": "MenuItem",
+      "description": "Collection of menu items"
+    },
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "Collection of user profiles"
+    },
+    "/videos/{videoId}": {
+      "schema": "Video",
+      "description": "Collection of showcase videos"
+    }
+  }
+}
